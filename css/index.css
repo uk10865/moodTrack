@@ -1,0 +1,976 @@
+/*
+OrangeHorizon = #ff5f00
+BrightYellow = #ffb300
+BlueZenith = #bee6ff
+RedSunset = #ea001b
+DuskBlue = #1e284b
+
+NightBlack = #00080f
+GrayTwlight = #7c878e
+MoonGray = #f0eeeb
+PureWhite = #ffffff
+
+
+*/
+
+/*****************************************************************************************************************
+ *
+ *  Generic Styles
+ *
+ *
+ *****************************************************************************************************************/
+article {
+	width: 65%;
+	min-width: 600px;
+	margin: 50px auto 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+	article {
+		width: 85%;
+		margin: 50px auto 0 auto;	
+		min-width: 300px;
+	}
+}
+
+aside {
+	margin: 10px auto 10px auto;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+
+    background-color:#f0eeeb;
+
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:14px; 
+
+    margin:0px;
+    padding:0px;
+
+    text-transform:capitalize;
+}
+
+h1 {
+    font-size: 24px;
+	color: #1e284b;
+    font-weight: bold;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+input[type=button], input[type=submit] {
+    background-color: #1e284b;
+	border-radius: 8px;
+    color: #ff5f00;
+	border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type=button]:active, input[type=button]:hover, input[type=submit]:active , input[type=submit]:hover {
+    background-color: #1e284b;
+}
+
+input[type=text], input[type=password]{
+    padding: 12px 20px;
+    border: 1px solid #7c878e;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 14px;
+	text-align: left;
+	color: #00080f;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border: 1px solid #ff5f00;
+}
+
+::placeholder {
+    color: #7c878e;
+}
+
+/*  Set the background colour for the full page */
+main {
+	position: relative;
+	margin-top: 50px;
+	text-align: center;
+ 	margin-left: auto;
+    margin-right: auto;
+	z-index: 0;
+    width: 50%;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+main {
+    width: 85%;
+	}
+}
+
+select {
+    padding: 0;
+    border: 1px solid #7c878e;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 14px;
+	 color: #00080f;
+
+}
+.qType {
+	width: 30%;
+    float: right;
+}
+
+.qText {
+	width: 50%;
+}
+
+table {
+	background-color: #ffffff;
+	width: 100%;
+	min-width: 175px;
+}
+
+th {
+	background-color: #1e284b;
+	color: #ff5f00;
+	height: 40px;
+}
+
+tr {
+	height: 50px;
+}
+
+tr:nth-child(odd) {
+	background-color: #bee6ff;
+}
+
+td {
+	padding: 0 5px 0 5px;
+}
+
+textarea {
+	width: 100%;
+}
+
+
+/*****************************************************************************************************************
+ *
+ *  Header Styles
+ *
+ *
+ *****************************************************************************************************************/
+header {
+	background-color: #00080f;
+	height: 40px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+ /*****************************************************************************************************************
+ *
+ *  Navigation Styles
+ *
+ *
+ *****************************************************************************************************************/
+nav {
+	display: inline;
+	float: left;
+	height: 100%;
+	transition: width 2s;
+	z-index: 100;
+}
+
+nav ul {
+	height: 40px;
+	margin : 0;
+	z-index: 100;
+}
+
+nav li  {
+	display: block;
+	float: left;
+	height: 100%;
+	padding: 0 10px 0 10px; /* top, left, bottom, right */
+	text-align: center;
+	color: #ffffff;
+}
+
+nav li:hover {
+  color: #ff5f00;
+  box-shadow: 0px 2px #ff5f00;
+}
+
+li.icon {
+	display: none;
+}
+
+nav .closeIcon {
+		display: none;
+}
+
+@media screen and (max-width: 600px) {
+	nav li,  nav.responsive li.icon {
+		display: none;
+	}
+	nav li.icon,  nav.responsive li {
+		display: block;
+	}
+	
+	nav.responsive  {
+		transition: display 5s;
+		left: 0;
+		top:0; 
+		position: fixed;
+		background-color: #00080f;
+	}
+   nav.responsive .closeIcon {
+       margin: 2px 2px 0 p;
+       text-align: right;
+}
+	nav.responsive ul, nav ul {
+		margin: 0;
+		padding: 0;
+	}
+	
+	nav.responsive li {
+		float: none;
+		display: block;
+		height:100%;
+		width: 150px;
+		background-color: #00080f;
+		text-align: left;
+		transition: width 2s;
+	}
+
+	nav.responsive li:hover {
+  color: #ff5f00;
+  box-shadow: 0px 1px #ff5f00;
+	}
+}
+
+
+
+
+
+.naviBar {
+	float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	padding: 6px;
+	vertical-align: middle;
+	background-color: #00080f;
+	box-shadow: 0px 1px 10px #00080f;
+	z-index: 10;
+}
+
+.naviBar a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px; 
+  color: #ffffff;
+  font-size:10px; 
+  vertical-align: middle;
+}
+ 
+.naviBar a:hover {
+  color: #ff5f00;
+  box-shadow: 0px 1px #ff5f00;
+}
+
+.naviBar a.icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .naviBar a {display: none;}
+  .naviBar a.icon {
+    float: left;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .naviBar.responsive {
+    position: absolute;
+    left: 0;
+    top: 0px;
+	z-index: 100;
+  }	  
+  .naviBar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+	background-color: #00080f;
+	z-index: 100;
+  }
+	
+  .naviBar.responsive a:hover {
+	color: #ff5f00;
+	box-shadow: 0px 1px #ff5f00;
+	}
+}
+/*****************************************************************************************************************
+ *
+ *  Footer Styles
+ *
+ *
+ *****************************************************************************************************************/
+/*****************************************************************************************************************
+ *
+ *  Custom Styles
+ *
+ *
+ *****************************************************************************************************************/
+.buildSurvey {
+   margin: 0 auto 0 auto;
+}
+
+.controls {
+	margin: 15px auto 15px auto;
+	text-align: center;
+}
+
+.popForm {
+	background-color: #ffffff;
+	border: 2px solid #1e284b;
+	border-radius: 10px;
+	display: none;
+	left:0;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 175px;
+	padding: 25px;
+	right:0;
+	position: fixed;
+	text-align: right;
+	top: 65px;
+	width: 40%;
+ }
+ 
+
+.popForm.responsive {
+	display: block;
+	clear: left;
+}
+
+.popForm input[type=text] {
+	border: 0;
+	border-bottom: 1px solid #7c878e;
+	width: 100%;
+}
+.popForm input[type=text]:focus, input[type=password]:focus {
+	border: 0;
+    border-bottom: 1px solid #ff5f00;
+}	
+.popFormRow {
+	margin: 10px auto 10px auto;
+	width: 100%;
+}
+
+.qType {
+	width: 35%;
+}
+
+.showEither, .showOr {
+	display: none;
+}
+
+.showEither.responsive, .showOr.responsive {
+	display: block;
+}
+
+/* The switch - the box around the slider */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+
+/* hide the default HTML checkbox */
+.toggleSwitch input {display:none;}
+
+/* the slider */
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.toggle:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .toggle {
+  background-color: #1e284b;
+}
+
+input:focus + .toggle {
+  box-shadow: 0 0 1px #1e284b;
+}
+
+input:checked + .toggle:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.toggle.round {
+  border-radius: 30px;
+}
+
+.toggle.round:before {
+  border-radius: 50%;
+}
+
+
+
+ 
+/*styles defined for specific elements on the web page*/
+/*
+/*
+/* define the style of the Navigation Bar */
+.mainScreen {
+	z-index: 1;
+	margin-top: 40px;
+}
+
+
+
+.dateRange {
+	background-color: #1e284b;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	height: 40px;
+}
+
+
+.dateSelectBack {
+width:20%;
+height:100%;
+vertical-align: middle;
+float: left;
+}
+
+.dateSelectAdd {
+width:20%;
+height:100%;
+float: right;
+}
+
+.dateSelectBack :hover, .dateSelectAdd :hover {
+	background-color: #7c878e;
+}
+
+/**********************************************************************************************************/
+/* text box that acts as a checkbox that changes colour when the user selects it */
+.reason {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.reason input {display:none;}
+
+/* teh text within the box */
+.reasonText {
+	text-align: center;
+	color: #1e284b;	
+	padding: 5px;
+	border: 2px solid #1e284b;
+	border-radius: 34px;
+}
+
+input:checked + .reasonText {
+  background-color: #1e284b;
+  color: #ffffff;
+}
+
+input:focus + .reasonText {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+
+/*************************************************************************************************************************************
+/*                                                                                                                                   *
+/* Define the styles for the various tables used to manage the layout of data                                                        *
+/*                                                                                                                                   *
+/*************************************************************************************************************************************/
+
+.piechart {
+	width:100%;
+	text-align: center;
+  	margin-left: auto;
+    margin-right: auto;
+}
+
+/* style definition of the list of active surveys presented to a user when selecting the survey item from the NaviBar */
+/* style definition for the page layout when displaying the individual questions for a particular survey the users is completing */
+
+
+/*#surveyResults, #surveyTitle {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+	margin: auto;
+    background-color: #f0eeeb;
+}
+
+#surveyResults td, #surveyResults th, #surveyTitle td, #surveyTitle th, #surveyTitle tr  {
+    border: 1px solid #ffffff;
+    padding: 8px;
+}
+
+#surveyResults tr:nth-child(even){
+	background-color: #ffffff;
+}
+
+#surveyResults tr:hover {
+  box-shadow: 0px 1px #ff5f00;
+    border: 1px solid #ff5f00;
+}
+
+#surveyResults th, #surveyTitle th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7c878e;
+    color: #ffffff;
+	font-weight: bold;
+}
+*/
+/*************************************************************************************
+/*                                                                                   *
+/* define the table layout used to present the mood values on the home screen        *
+/*                                                                                   *
+/*************************************************************************************/
+
+
+.moodTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 100%;
+  	margin-left: auto;
+    margin-right: auto;
+	text-align: left;
+}
+.moodInput {
+	text-align: center;
+}
+
+.moodInput div {
+margin-top:15px;
+margin-bottom:15px;
+}
+.moodItem {
+    box-shadow: 3px 3px 5px #7c878e;
+	margin: 12px;
+	padding: 5px;
+	overflow: auto;
+	background-color: #ffffff;
+}	
+
+.moodItem img {
+	float: left;
+	margin: 5px;
+	width: 50px;
+}
+
+.moodItem .details {
+	margin-left: 75px;
+	text-align: left;
+}	
+
+.moodItem .mood {
+	font-size: 16px;
+	font-weight: bold;
+}
+.moodItem .empty {
+	color: #ffffff;
+	height:55px;
+    background-color: #ff5f00;
+	border: 3px solid #ff5f00;
+    box-shadow: 2px 3px 5px #7c878e;
+}
+
+/*************************************************************************************
+	Insipre form to review source page details
+/*************************************************************************************/
+
+
+.inspireGet {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 100%;
+  	margin-left: auto;
+    margin-right: auto;
+	text-align: left;
+}
+
+
+.inspireArticle {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	margin: 12px;
+	text-align: left;
+    box-shadow: 3px 3px 5px #7c878e;
+	background-color: #ffffff;
+	padding:10px;
+    overflow: auto;
+    clear: both;
+}
+
+.inspireArticle a {
+	font-weight: bold;
+	font-size:  16px;
+	color: #1e284b;
+
+}
+.inspireArticle a:hover {
+	color: #bee6ff;
+}
+
+.inspireArticle img {
+    width: 130px;
+    padding: 5px;
+	border: 1px solid #1e284b;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+	.inspireArticle img {
+		width: 85%;
+	}
+}
+
+.summary {
+	color: #7c878e;
+	font-size: 10px;
+	font-style: italic;	
+}
+.inspireArticle .srcNAME {
+	color: #7c878e;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: bold;
+}
+.details p {
+	color: #1e284b;
+	font-size: 12px;
+}
+
+/*************************************************************************************
+/*                                                                                   *
+/* define the table layout used when EDITING or INSERTING an individual mood value   *
+/*                                                                                   *
+/*************************************************************************************/
+
+#moodEdit {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: seperate;
+  	margin: auto;
+  	margin-left: auto;
+    margin-right: auto;
+	text-align: left;
+    box-shadow: 3px 3px 5px #7c878e;
+}
+
+
+#moodEdit td {
+    text-align: center;
+  	margin-left: auto;
+    margin-right: auto;
+    width=100%;
+}
+
+/*************************************************************************************
+/*                                                                                   *
+/* define the table layout used to present the AREA CHART on the home screen        *
+/*                                                                                   *
+/*************************************************************************************/
+
+#areaChartTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: separate;
+  	margin: auto;
+  	margin-left: auto;
+    margin-right: auto;
+	text-align: left;
+}
+
+#areaChartTable td, #areaChartTable th {
+    padding: 8px;
+    text-align: center;
+  	margin-left: auto;
+    margin-right: auto;
+    width=100%;
+}
+
+#areaChartTable td {
+    background-color: #ffffff;
+    border: 3px solid #ffffff;
+    box-shadow: 2px 3px 5px #7c878e;
+}
+
+#areaChartTable td + .empty {
+	color: #ea001b;
+    border: 3px solid #ea001b;
+    box-shadow: 2px 3px 5px #7c878e;
+}
+
+#areaChartTable tr:{
+	text-align: center;
+}
+
+#areaChartTable th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+    background-color: #f0eeeb;
+    color: #ffffff;
+	font-weight: bold;
+}
+
+
+/*************************************************************************************
+/*                                                                                   *
+/* define the table layout used to present the Login Form                            *
+/*                                                                                   *
+/*************************************************************************************/
+
+.loginForm {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 275px;
+  	margin-left: auto;
+    margin-right: auto;
+    background-color: #f0eeeb;
+	margin-top: 100px;
+	padding: 15px;
+	text-align: center;
+    border-radius: 8px;	
+}
+
+
+.loginForm input{
+	margin-top: 25px;
+	width: 100%;
+}
+
+.loginForm input[type=submit] {
+	width: 100%;
+	margin-top:40px;
+}
+
+.loginForm a {
+	color: #ff5f00;
+}
+
+.loginForm a:hover {
+	color: #ffb300;
+}
+
+.loginForm .container {
+	border: 1px solid  #ff5f00;
+	border-radius: 8px;
+	padding: 5px;
+}
+	
+
+/****************************************************************
+/*   styles defined for generic web page elements               *
+/*                                                              *
+/*                                                              *
+/****************************************************************/
+
+
+.slidecontainer {
+    width: 75%;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #BFBFBF;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	/*style of indicator within the slider */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #404040;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #404040;
+    cursor: pointer;
+}
+
+
+/*********************************************************************************************************
+//
+//  Survey styles
+//
+**********************************************************************************************************/
+
+.questions_item {
+border: 2px solid #1e284b;
+padding-left: 12px;
+}
+
+.createSurvey {
+   width:  80%;
+  	margin-left: auto;
+    margin-right: auto;
+}
+
+.surveyMenu {
+	float: left;
+	width: 150px;
+	margin-top: 20px;
+}
+
+
+.surveyMenu ul {
+	width:100%;
+}
+
+.surveyMenu li {
+	margin-left: 20px;
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+.surveyMenu li:hover {
+background-color: #1e284b;
+}
+
+.surveyMenu .section {
+	float: left;
+	width: 100%;
+}
+
+.surveyCreate {display: none;}
+
+
+.surveyCreate.responsive {
+	background-color: #ffffff;
+	width: 50%;
+   	margin-left: auto;
+    margin-right: auto;
+   top: 100px;
+	z-index: 100;
+	display: block;
+	border: 2px solid #1e284b;
+	padding: 50px;
+	border-radius: 10px;
+}
+
+
+.surveyTitle {
+	height: 20px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.sQuest {
+	border: 1px solid #1e284b;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+
+
+.aText {
+	height: 10px;
+}
+
+.qValue {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.sQuestDetail {
+	display: none;
+}
+
+.sQuestDetail.responsive {
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 5px;
+} 
+
+.qCreator {
+	display: none;
+}
+
+.qCreator.responsive {
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 5px;
+    width: 100%;
+} 
+
+
+.answerText {
+	display:block;
+	font-size:14px;
+	width:100%;
+}
+
+.qStore {
+	margin: 12px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+    border: 1px solid #7c878e;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <title>TrackMyMood</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<script type="text/javascript">
+	// Load google charts
+	google.charts.load('current', {'packages':['corechart']});
+	
+	// Draw the chart and set the chart values
+	function drawPieChart(arr, options) {
+
+		if (typeof(arr) !== "undefined") {
+			sessionStorage.setItem("pieData", JSON.stringify(arr));
+			sessionStorage.setItem("pieOptions", JSON.stringify(options));
+			} else {
+			arr = JSON.parse(sessionStorage.getItem("pieData"));
+			options = JSON.parse(sessionStorage.getItem("pieOptions"));
+		}
+			var data = google.visualization.arrayToDataTable(arr);
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+			chart.draw(data, options);
+	}
+	
+	function drawAreaChart(arr, options) {
+        var data = google.visualization.arrayToDataTable(arr);
+		console.log('drawing the Area Chart');
+
+        var chart = new google.visualization.AreaChart(document.getElementById('area_chart_div'));
+        chart.draw(data, options);
+     }  
+    
+	window.onresize = function(){
+          var area_chart_div = document.getElementById("area_chart_div");
+			if (area_chart_div) {
+				console.log('building area chart...');
+				buildAreaChartArray();
+			}
+          var pieChart = document.getElementById("piechart");
+			if (pieChart) {
+				console.log('building piechart...');
+				buildPopSurveyArray();
+			}
+	}
+
+
+		function showNav() {
+			var x = document.getElementsByTagName("nav");
+			if (x[0].className === "") {
+				x[0].className = "responsive";
+              event.stopPropagation();
+			} else {
+				x[0].className = "";
+			}
+			console.log("Classname is:" + x[0].className);
+		}
+</script>
+</head>
+<body id="loginScreen">
+	<section  background="css/splash1.png">
+	<div class='loginForm' id='loginForm' name='loginForm'>
+		<form action="javascript:PhoneAppCheckUser()" method="post">
+				<h1>** Log-in **</h1>
+				<input type="text" id="username" name="username" placeholder="Enter your email address...">
+				<input type="password" id="password" name="password" placeholder="Enter your password...">
+				<span id="errMsg" class='errorMsg'></span>
+				
+				<input type="submit" value="Login">
+				<a href='registerUser.php'>Register</a> - <a href='resetUser.php'>Forgot Password</a>
+		</form>
+	</div>
+	</section>
+
+
+	<script type="text/javascript" src="web/js/survey.js"></script> 
+	<script type="text/javascript" src="js/goLogin.js"></script> 
+	<script type="text/javascript" src="js/goInspire.js"></script> 
+	<script type="text/javascript" src="js/myMood.js"></script> 
+	<script type="text/javascript" src="js/goHome.js"></script> 
+	<script type="text/javascript" src="js/dateHandler.js"></script> 
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/goSurvey.js"></script>
+
+	
+</body>
