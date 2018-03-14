@@ -67,11 +67,11 @@ function PhoneAppCheckUser() {
 		if (this.readyState == 4 && this.status == 200) {
 			//check for a status change in the xmlhttp object (response from the PHP file)
 			// if (this.responseText == 1 ) {
-				alert("response is: " + this.responseText);
 				if (this.responseText.substr(0,5) == "ERROR") {
 					document.getElementById("errMsg").innerHTML = this.responseText;
 				} else {
 					loginScreen.innerHTML=this.responseText;
+					document.body.background = '';
 					goHome();
 				}
 		}

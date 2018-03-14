@@ -13,6 +13,19 @@ PureWhite = #ffffff
 
 */
 
+#loading {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: block;
+    background:url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.25);
+	z-index: 99
+}
+
+
+
 /*****************************************************************************************************************
  *
  *  Generic Styles
@@ -49,9 +62,9 @@ body {
 
     margin:0px;
     padding:0px;
-
     text-transform:capitalize;
 }
+
 
 h1 {
     font-size: 24px;
@@ -262,69 +275,6 @@ nav .closeIcon {
 }
 
 
-
-
-
-.naviBar {
-	float: left;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 40px;
-	padding: 6px;
-	vertical-align: middle;
-	background-color: #00080f;
-	box-shadow: 0px 1px 10px #00080f;
-	z-index: 10;
-}
-
-.naviBar a {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px; 
-  color: #ffffff;
-  font-size:10px; 
-  vertical-align: middle;
-}
- 
-.naviBar a:hover {
-  color: #ff5f00;
-  box-shadow: 0px 1px #ff5f00;
-}
-
-.naviBar a.icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .naviBar a {display: none;}
-  .naviBar a.icon {
-    float: left;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .naviBar.responsive {
-    position: absolute;
-    left: 0;
-    top: 0px;
-	z-index: 100;
-  }	  
-  .naviBar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-	background-color: #00080f;
-	z-index: 100;
-  }
-	
-  .naviBar.responsive a:hover {
-	color: #ff5f00;
-	box-shadow: 0px 1px #ff5f00;
-	}
-}
 /*****************************************************************************************************************
  *
  *  Footer Styles
@@ -341,9 +291,104 @@ nav .closeIcon {
    margin: 0 auto 0 auto;
 }
 
+
 .controls {
 	margin: 15px auto 15px auto;
 	text-align: center;
+}
+.dateRange {
+	background-color: #1e284b;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	height: 40px;
+}
+
+
+.dateSelectBack {
+width:20%;
+height:100%;
+vertical-align: middle;
+float: left;
+}
+
+.dateSelectAdd {
+width:20%;
+height:100%;
+float: right;
+}
+
+.dateSelectBack :hover, .dateSelectAdd :hover {
+	background-color: #7c878e;
+}
+
+.inspireGet {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 100%;
+  	margin-left: auto;
+    margin-right: auto;
+	text-align: left;
+}
+
+
+.inspireArticle {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	margin: 12px;
+	text-align: left;
+    box-shadow: 3px 3px 5px #7c878e;
+	background-color: #ffffff;
+	padding:10px;
+    overflow: auto;
+    clear: both;
+}
+
+.inspireArticle a {
+	font-weight: bold;
+	font-size:  16px;
+	color: #1e284b;
+
+}
+.inspireArticle a:hover {
+	color: #bee6ff;
+}
+
+.inspireArticle img {
+    width: 130px;
+    padding: 5px;
+	border: 1px solid #1e284b;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+	.inspireArticle img {
+		width: 85%;
+	}
+}
+
+.summary {
+	color: #7c878e;
+	font-size: 10px;
+	font-style: italic;	
+}
+.inspireArticle .srcNAME {
+	color: #7c878e;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: bold;
+}
+.details p {
+	color: #1e284b;
+	font-size: 12px;
+}
+
+.piechart {
+	width:100%;
+	text-align: center;
+  	margin-left: auto;
+    margin-right: auto;
 }
 
 .popForm {
@@ -386,6 +431,33 @@ nav .closeIcon {
 .qType {
 	width: 35%;
 }
+.reason {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.reason input {display:none;}
+
+/* teh text within the box */
+.reasonText {
+	text-align: center;
+	color: #1e284b;	
+	padding: 5px;
+	border: 2px solid #1e284b;
+	border-radius: 34px;
+}
+
+input:checked + .reasonText {
+  background-color: #1e284b;
+  color: #ffffff;
+}
+
+input:focus + .reasonText {
+  box-shadow: 0 0 1px #2196F3;
+}
 
 .showEither, .showOr {
 	display: none;
@@ -394,6 +466,24 @@ nav .closeIcon {
 .showEither.responsive, .showOr.responsive {
 	display: block;
 }
+
+.surveyTitle {
+	height: 20px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+.surveyTitle tr {
+	background-color: #ffffff;
+}
+
+.surveyTitle th {
+	width: 30%;
+	
+}
+
+
 
 /* The switch - the box around the slider */
 .toggleSwitch {
@@ -457,6 +547,8 @@ input:checked + .toggle:before {
 
 
 
+
+
  
 /*styles defined for specific elements on the web page*/
 /*
@@ -469,111 +561,11 @@ input:checked + .toggle:before {
 
 
 
-.dateRange {
-	background-color: #1e284b;
-	color: white;
-	font-weight: bold;
-	font-size: 12px;
-	text-align: center;
-	height: 40px;
-}
-
-
-.dateSelectBack {
-width:20%;
-height:100%;
-vertical-align: middle;
-float: left;
-}
-
-.dateSelectAdd {
-width:20%;
-height:100%;
-float: right;
-}
-
-.dateSelectBack :hover, .dateSelectAdd :hover {
-	background-color: #7c878e;
-}
-
 /**********************************************************************************************************/
-/* text box that acts as a checkbox that changes colour when the user selects it */
-.reason {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.reason input {display:none;}
-
-/* teh text within the box */
-.reasonText {
-	text-align: center;
-	color: #1e284b;	
-	padding: 5px;
-	border: 2px solid #1e284b;
-	border-radius: 34px;
-}
-
-input:checked + .reasonText {
-  background-color: #1e284b;
-  color: #ffffff;
-}
-
-input:focus + .reasonText {
-  box-shadow: 0 0 1px #2196F3;
-}
-
 
 /*************************************************************************************************************************************
 /*                                                                                                                                   *
-/* Define the styles for the various tables used to manage the layout of data                                                        *
-/*                                                                                                                                   *
 /*************************************************************************************************************************************/
-
-.piechart {
-	width:100%;
-	text-align: center;
-  	margin-left: auto;
-    margin-right: auto;
-}
-
-/* style definition of the list of active surveys presented to a user when selecting the survey item from the NaviBar */
-/* style definition for the page layout when displaying the individual questions for a particular survey the users is completing */
-
-
-/*#surveyResults, #surveyTitle {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-	margin: auto;
-    background-color: #f0eeeb;
-}
-
-#surveyResults td, #surveyResults th, #surveyTitle td, #surveyTitle th, #surveyTitle tr  {
-    border: 1px solid #ffffff;
-    padding: 8px;
-}
-
-#surveyResults tr:nth-child(even){
-	background-color: #ffffff;
-}
-
-#surveyResults tr:hover {
-  box-shadow: 0px 1px #ff5f00;
-    border: 1px solid #ff5f00;
-}
-
-#surveyResults th, #surveyTitle th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #7c878e;
-    color: #ffffff;
-	font-weight: bold;
-}
-*/
 /*************************************************************************************
 /*                                                                                   *
 /* define the table layout used to present the mood values on the home screen        *
@@ -627,71 +619,6 @@ margin-bottom:15px;
     box-shadow: 2px 3px 5px #7c878e;
 }
 
-/*************************************************************************************
-	Insipre form to review source page details
-/*************************************************************************************/
-
-
-.inspireGet {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width: 100%;
-  	margin-left: auto;
-    margin-right: auto;
-	text-align: left;
-}
-
-
-.inspireArticle {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  	margin: 12px;
-	text-align: left;
-    box-shadow: 3px 3px 5px #7c878e;
-	background-color: #ffffff;
-	padding:10px;
-    overflow: auto;
-    clear: both;
-}
-
-.inspireArticle a {
-	font-weight: bold;
-	font-size:  16px;
-	color: #1e284b;
-
-}
-.inspireArticle a:hover {
-	color: #bee6ff;
-}
-
-.inspireArticle img {
-    width: 130px;
-    padding: 5px;
-	border: 1px solid #1e284b;
-	float: left;
-	margin-right: 10px;
-	margin-left: 10px;
-}
-
-@media screen and (max-width: 600px) {
-	.inspireArticle img {
-		width: 85%;
-	}
-}
-
-.summary {
-	color: #7c878e;
-	font-size: 10px;
-	font-style: italic;	
-}
-.inspireArticle .srcNAME {
-	color: #7c878e;
-	font-size: 10px;
-	font-style: italic;
-	font-weight: bold;
-}
-.details p {
-	color: #1e284b;
-	font-size: 12px;
-}
 
 /*************************************************************************************
 /*                                                                                   *
@@ -916,11 +843,6 @@ background-color: #1e284b;
 }
 
 
-.surveyTitle {
-	height: 20px;
-	font-size: 14px;
-	font-weight: bold;
-}
 .sQuest {
 	border: 1px solid #1e284b;
 	padding-left:10px;

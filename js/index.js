@@ -18,6 +18,8 @@
  
 */
 
+
+
 function checkUser() {
 	userName = localStorage.getItem("userName");
 	console.log("userName=" + userName);
@@ -27,7 +29,6 @@ function checkUser() {
 	} else {
 		console.log('found a username system variable');
 		goHome();
-		document.getElementById("naviBar").style.display = "block";
 	}
 }
 
@@ -49,10 +50,12 @@ function logoutUser() {
 }
 
 
-
 function goHome(showDate) {
+	document.getElementById("loading").style.display = "block";
 	console.log('going home');
  	buildMyHome(showDate);
+	setTimeout(function() {document.getElementById("loading").style.display = "none"}, 2000);
+
 }
 
 function goMood(showDate) {
@@ -62,14 +65,18 @@ function goMood(showDate) {
 }
 
 function goInspiration() {
+	document.getElementById("loading").style.display = "block";
 	console.log('building Inspiration screen..');
 
 	buildInspire();
+	setTimeout(function() {document.getElementById("loading").style.display = "none"}, 2000);
 	
 }
 function goSurvey() {
+	document.getElementById("loading").style.display = "block";
 	console.log('building Survey screen..');
 	buildMySurveyList();
+	setTimeout(function() {document.getElementById("loading").style.display = "none"}, 2000);
 	
 }
 function goPositive() {
